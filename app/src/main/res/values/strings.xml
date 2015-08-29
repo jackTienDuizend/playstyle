@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Ribbit</string>
+    <string name="title_section1">Inbox</string>
+    <string name="title_section2">Friends</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="Username">username_hint</string>
+    <string name="password_hint">Password</string>
+    <string name="username_hint">Username</string>
+    <string name="login_button">Login</string>
+    <string name="sign_up_text">Sign Up!</string>
+    <string name="title_activity_sign_up">SignUpActivity</string>
+    <string name="email_hint">Email</string>
+    <string name="sign_up_button_label">Sign Up!</string>
+    <string name="signup_error_message">Please make sure you entered a username, password and email address!</string>
+    <string name="signup_error_title">Oops</string>
+    <string name="login_error_title">Oops</string>
+    <string name="login_error_message">Please make sure you entered a username and password !</string>
+    <string name="action_log_out">Logout</string>
+    <string name="empty_inbox_label">No new messages</string>
+    <string name="empty_friends_label">No Friends</string>
+    <string name="menu_edit_friend">Edit friends</string>
+    <string name="title_activity_edit_friends">EditFriendsActivity</string>
+    <string name="error_title">We\'re sorry</string>
+
+</resources>
