@@ -27,7 +27,7 @@ public class PagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         switch (position) {
             case 0:
-                return FriendsFragment.newInstance(position);
+                return InboxFragment.newInstance(position);
             case 1:
                 return FriendsFragment.newInstance(position);
         default:
