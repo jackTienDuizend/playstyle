@@ -3,7 +3,35 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="windowActionBar">true</item>
         <item name="tabIndicatorColor">#ffff0030</item>
+        <item name="actionOverflowButtonStyle">@style/AppTheme.overflow</item>
+        <item name="android:actionBarStyle">@style/AppTheme.TitleTextStyle</item>
+        <item name="android:listViewStyle">@style/AppTheme.LightPurple</item>
+        <item name="android:gridViewStyle">@style/AppTheme.LightPurple.GridView</item>
+    </style>
 
+    <style name="AppTheme.LightPurple.GridView">
+        <item name="android:padding">@dimen/user_grid_spacing</item>
+        <item name="android:divider">@null</item>
+    </style>
+
+    <style name="AppTheme.LightPurple">
+        <item name="android:background">@color/light_purple_background</item>
+    </style>
+
+    <style name="AppTheme.TitleTextStyle" parent="@style/Widget.AppCompat.ActionBar.Solid">
+        <item name="android:titleTextStyle">@style/MyTitleTextStyle</item>
+    </style>
+
+    <style name="MyTitleTextStyle" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/text_color</item>
+    </style>
+
+    <style name="AppTheme.overflow" parent="@android:style/Widget.ActionButton.Overflow">
+        <item name="android:src">@drawable/ic_menu_overflow</item>
+    </style>
+
+    <style name="AppTheme.selectRecipient" parent="@android:style/Widget.ActionButton.Overflow">
+        <item name="android:src">@drawable/ic_menu_overflow</item>
     </style>
 
     <style name="NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
@@ -86,10 +114,14 @@
         <item name="android:background">@drawable/apptheme_btn_default_holo_light</item>
     </style>
 
-
-
-
-
+    <style name="GridImage">
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:scaleType">fitXY</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:layout_alignParentTop">true</item>
+    </style>
 
 
 </resources>

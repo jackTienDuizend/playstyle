@@ -1,4 +1,4 @@
-package examplejack.com.playstyle;
+package examplejack.com.playstyle.adapters;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -43,7 +43,7 @@ public class PageFragment extends Fragment {
                 return view;
 
             case 2: //Pagina 1
-                view = inflater.inflate(R.layout.fragment_friends, container, false);
+                view = inflater.inflate(R.layout.user_grid, container, false);
                 this.setHasOptionsMenu(true);
                 return view;
 

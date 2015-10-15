@@ -4,13 +4,20 @@
                 android:layout_height="match_parent"
                 tools:context="examplejack.com.ribbit.SignUpActivity">
 
-    <ListView
+    <GridView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@android:id/list"
+        android:id="@+id/friendsGrid"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/my_toolbar"/>
+        android:numColumns="auto_fit"
+        android:columnWidth="90dp"
+        android:stretchMode="columnWidth"
+        android:horizontalSpacing="@dimen/user_grid_spacing"
+        android:verticalSpacing="@dimen/user_grid_spacing"
+        android:clipToPadding="false"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"/>
 
     <TextView
         android:layout_width="match_parent"

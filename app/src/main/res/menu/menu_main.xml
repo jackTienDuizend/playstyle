@@ -3,7 +3,7 @@
       xmlns:app="http://schemas.android.com/tools">
 
     <item android:id="@+id/action_camera"
-          android:icon="@drawable/ic_action_camera"
+          android:icon="@drawable/ic_menu_camera"
           android:title="@string/menu_camera_label"
           compat:showAsAction="ifRoom"/>
     <item android:id="@+id/action_edit_friends"

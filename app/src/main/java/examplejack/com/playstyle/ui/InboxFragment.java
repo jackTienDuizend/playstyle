@@ -1,14 +1,15 @@
-package examplejack.com.playstyle;
+package examplejack.com.playstyle.ui;
 
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -20,6 +21,10 @@ import com.parse.ParseUser;
 import java.util.ArrayList;
 import java.util.List;
 
+import examplejack.com.playstyle.adapters.MessageAdapter;
+import examplejack.com.playstyle.utils.ParseConstants;
+import examplejack.com.playstyle.R;
+
 /**
  * Created by jack on 24-8-2015.
  */
@@ -27,6 +32,7 @@ public class InboxFragment extends ListFragment {
 
     public static final String ARG_PAGE = "ARG_PAGE";
     protected List<ParseObject> mMessages;
+    protected SwipeRefreshLayout mSwipeRefreshLayout;
 
 
     @Override
@@ -35,7 +41,13 @@ public class InboxFragment extends ListFragment {
 
         View view = inflater.inflate(R.layout.fragment_inbox, container, false);
 
-
+        mSwipeRefreshLayout = (SwipeRefreshLayout)view.findViewById(R.id.swipeRefreshLayout);
+        mSwipeRefreshLayout.setOnRefreshListener(mOnRefreshListener);
+        mSwipeRefreshLayout.setColorSchemeColors(
+                R.color.swipeRefresh1,
+                R.color.swipeRefresh2,
+                R.color.swipeRefresh3,
+                R.color.swipeRefresh4);
         return view;
 
     }
@@ -45,6 +57,12 @@ public class InboxFragment extends ListFragment {
     public void onResume() {
         super.onResume();
 
+        retrieveMessages();
+
+
+    }
+
+    private void retrieveMessages() {
         ParseQuery<ParseObject> query = new ParseQuery<ParseObject>(ParseConstants.CLASS_MESSAGES);
         query.whereEqualTo(ParseConstants.KEY_REDIPIENT_IDS, ParseUser.getCurrentUser().getObjectId());
         query.addDescendingOrder(ParseConstants.KEY_CREATED_AT);
@@ -52,10 +70,14 @@ public class InboxFragment extends ListFragment {
         //Uitoeren van de query
 
 
-
         query.findInBackground(new FindCallback<ParseObject>() {
             @Override
             public void done(List<ParseObject> messages, ParseException e) {
+
+                if (mSwipeRefreshLayout.isRefreshing()){
+                    mSwipeRefreshLayout.setRefreshing(false);
+                }
+
                 if (e == null) {
                     //We found messages
                     mMessages = messages;
@@ -82,8 +104,6 @@ public class InboxFragment extends ListFragment {
                 }
             }
         });
-
-
     }
 
     public static InboxFragment newInstance(int page) {
@@ -138,4 +158,11 @@ public class InboxFragment extends ListFragment {
         }
 
     }
+
+    protected SwipeRefreshLayout.OnRefreshListener mOnRefreshListener = new SwipeRefreshLayout.OnRefreshListener() {
+        @Override
+        public void onRefresh() {
+            retrieveMessages();
+        }
+    };
 }

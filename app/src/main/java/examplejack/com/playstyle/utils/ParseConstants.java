@@ -1,4 +1,4 @@
-package examplejack.com.playstyle;
+package examplejack.com.playstyle.utils;
 
 /**
  * Created by jack on 25-8-2015.

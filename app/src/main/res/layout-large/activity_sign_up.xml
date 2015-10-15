@@ -74,6 +74,6 @@
         android:layout_below="@id/editTextLayout"
         android:layout_toRightOf="@id/buttonDivider"
         android:layout_marginLeft="0dp"
-        android:layout_marginRightt="0dp"
+        android:layout_marginRight="0dp"
         android:layout_alignRight="@+id/editTextLayout"/>
 </RelativeLayout>

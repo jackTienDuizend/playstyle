@@ -1,4 +1,4 @@
-package examplejack.com.playstyle;
+package examplejack.com.playstyle.utils;
 
 import java.io.ByteArrayOutputStream;
 

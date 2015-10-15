@@ -4,13 +4,23 @@
                 android:layout_height="match_parent"
                 tools:context="examplejack.com.ribbit.SignUpActivity">
 
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true">
 
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@android:id/list"
         android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"/>
+        android:layout_alignParentLeft="true"
+        android:paddingBottom="@dimen/inbox_vertical_margin"
+        android:clipToPadding="false"/>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
 
     <TextView
         android:layout_width="match_parent"

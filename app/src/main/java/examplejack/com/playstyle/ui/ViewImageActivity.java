@@ -1,4 +1,4 @@
-package examplejack.com.playstyle;
+package examplejack.com.playstyle.ui;
 
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +10,8 @@ import com.squareup.picasso.Picasso;
 
 import java.util.Timer;
 import java.util.TimerTask;
+
+import examplejack.com.playstyle.R;
 
 public class ViewImageActivity extends AppCompatActivity {
 

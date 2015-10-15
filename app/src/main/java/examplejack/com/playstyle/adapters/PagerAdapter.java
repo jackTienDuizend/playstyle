@@ -1,9 +1,12 @@
-package examplejack.com.playstyle;
+package examplejack.com.playstyle.adapters;
 
 import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+
+import examplejack.com.playstyle.ui.FriendsFragment;
+import examplejack.com.playstyle.ui.InboxFragment;
 
 /**
  * Created by jack on 23-8-2015.
